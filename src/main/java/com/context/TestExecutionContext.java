@@ -28,7 +28,12 @@ public class TestExecutionContext {
             this.driver = null;
         } else {
             this.driver = AppiumDriverManager.getDriver();
-            this.deviceId = AppiumDeviceManager.getAppiumDevice().getDevice().getUdid();
+            try {
+            	this.deviceId = AppiumDeviceManager.getAppiumDevice().getDevice().getUdid();
+            }catch(NullPointerException e) {
+            	System.out.println("Null pointer exception");
+            }
+            
         }
         LOGGER.info(String.format("%s - TestExecution context created", testName));
     }
