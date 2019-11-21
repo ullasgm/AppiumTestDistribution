@@ -77,7 +77,10 @@ public final class AppiumParallelMethodTestListener extends Helpers
     }
 
     private boolean isCloudExecution() {
-        return AppiumDeviceManager.getAppiumDevice().getDevice().isCloud();
+    	System.out.println("====================");
+        System.out.println("INSIDE isCloudMethod");
+        System.out.println("====================");
+    	return AppiumDeviceManager.getAppiumDevice().getDevice().isCloud();
     }
 
     private void startReportLogging(ITestResult iTestResult) throws IOException,
